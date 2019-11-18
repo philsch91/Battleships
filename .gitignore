@@ -1,0 +1,6 @@
+# .gitignore Battleships
+
+res/
+res/*
+
+.DS_Store
