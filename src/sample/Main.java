@@ -485,8 +485,8 @@ public class Main extends Application {
 
 			int x, y;
 			// *40 um auf unsere Spielfeldkoordinaten zu kommen
-			x = ship.getX() * 40;
-			y = ship.getY() * 40;
+			x = (int)ship.getX() * 40;
+			y = (int)ship.getY() * 40;
 			// Wird immer in das gegenüberliegende Feld gesetzt, deshalb stehen hier die
 			// Koordinaten vom Spieler 2
 			if (player == player1) {
