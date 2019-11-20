@@ -1,5 +1,6 @@
 package sample;
 
+import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -8,21 +9,21 @@ public class Player
 {
     Field area = new Field();
 
-    private ArrayList<AttackPositions> attackpositions = new ArrayList<>();
+    private ArrayList<Point> attackpositions = new ArrayList<>();
 
     private ArrayList<AIsave> AIsave = null;
 
     /*SaveAttack speichert alle Attacken in die Arraylist*/
     public void SaveAttack(int x, int y)
     {
-        this.attackpositions.add(new AttackPositions(x, y));
+        this.attackpositions.add(new Point(x, y));
     }
 
     /*Wir verhindern doppelten Angriff. Wir schauen, mit der foreach Schleife, ob die Übergebenen x,y von attackPossible
     schon in einer der gespeicherten Stellen in unserer ArrayList attackpositions enthalten ist.*/
     boolean attackPossible(int x, int y)
     {
-        for (AttackPositions a : this.attackpositions)
+        for (Point a : this.attackpositions)
         {
             if ((a.getX() == x) && (a.getY() == y))
             {
@@ -146,8 +147,8 @@ public class Player
         } else if (AIsave.get(0).getDirection() == null)
         {
             direction = Direction.DOWN;
-            x = AIsave.get(0).getX();
-            y = AIsave.get(0).getY();
+            x = (int) AIsave.get(0).getX();
+            y = (int) AIsave.get(0).getY();
             do
             {
                 switch (random.nextInt((3 - 0) + 1) + 0)
@@ -182,8 +183,8 @@ public class Player
             }
         } else
         {
-            x = AIsave.get(0).getX();
-            y = AIsave.get(0).getY();
+            x = (int) AIsave.get(0).getX();
+            y = (int) AIsave.get(0).getY();
             switch (AIsave.get(0).getDirection())
             {
                 case RIGHT:

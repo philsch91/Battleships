@@ -1,25 +1,14 @@
 package sample;
 
+import java.awt.Point;
 import java.util.ArrayList;
 
-public class Ship
+public class Ship extends Point
 {
     private ArrayList<ShipPart> shipparts = new ArrayList<>();
     private int length;
-    private int x;
-    private int y;
     private Direction direction;
     private int divx, divy;
-
-    public int getX()
-    {
-        return x;
-    }
-
-    public int getY()
-    {
-        return y;
-    }
 
     public int getDivx()
     {
@@ -53,7 +42,7 @@ public class Ship
     {
         for (int i = 0; i < length; i++)
         {
-            shipparts.add(new ShipPart(x, y));
+            shipparts.add(new ShipPart(new Point(x, y)));
             switch (directions)
             {
                 case UP:

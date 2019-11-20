@@ -1,21 +1,12 @@
 package sample;
 
-public class AIsave
+import java.awt.Point;
+
+public class AIsave extends Point
 {
-    private int x,y;
     private Direction direction;
     private boolean water;
-
-    public int getX()
-    {
-        return x;
-    }
-
-    public int getY()
-    {
-        return y;
-    }
-
+ 
     public Direction getDirection()
     {
         return direction;
@@ -30,37 +21,34 @@ public class AIsave
     {
         this.direction = direction;
     }
+    
 
     public void setWater(boolean water)
     {
         this.water = water;
     }
 
-    public AIsave(int x, int y)
+    public AIsave(Point coordinates)
     {
-        this.x = x;
-        this.y = y;
+        this.setLocation(coordinates);
     }
 
-    public AIsave(int x, int y, Direction direction)
+    public AIsave(Point coordinates, Direction direction)
     {
-        this.x = x;
-        this.y = y;
+        super();
         this.direction = direction;
     }
 
     public AIsave(int x, int y, boolean water)
     {
-        this.x = x;
-        this.y = y;
+        super();
         this.water = water;
         direction=null;
     }
 
     public AIsave(int x, int y, Direction direction, boolean water)
     {
-        this.x = x;
-        this.y = y;
+    	super();
         this.direction = direction;
         this.water = water;
     }
