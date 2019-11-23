@@ -5,7 +5,7 @@ import javafx.scene.image.Image;
 import javafx.scene.input.*;
 import javafx.scene.image.ImageView;
 
-public class ImageShip
+public class ShipImageView
 {
     private int x, y, length;
     private int rotate = 1;
@@ -99,7 +99,7 @@ public class ImageShip
     /*Konstruktor, mit dem wir die Schiffe in der Main (großer Block am Anfang) erstellen. Jedes Schiff hat die
     Eigenschaften und Funktionen, die hier drinnen stehen. z.B Es sind alle Schiffe automatisch nach rechts
     orientiert.*/
-    public ImageShip(int x, int y, int length, Image image)
+    public ShipImageView(int x, int y, int length, Image image)
     {
         this.x = x;
         this.y = y;

@@ -2,14 +2,11 @@ package sample;
 
 import java.awt.Point;
 
-public class ShipPart extends Point
-{
-	private static final long serialVersionUID = 1L;
+public class ShipPart extends Point {
 
     private boolean damage;
     
-    public ShipPart(Point coordinates)
-    {
+    public ShipPart(Point coordinates) {
     	this.setLocation(coordinates);
         this.damage = false;
         System.out.println(" schiffteil an X= " + this.x + " Y =" + this.y + " schaden= " + this.damage);
@@ -19,7 +16,6 @@ public class ShipPart extends Point
     {
         return damage;
     }
-
     public void destroy()
     {
         this.damage = true;
