@@ -19,8 +19,8 @@ import javafx.scene.media.MediaPlayer;
 import java.io.File;
 
 public class Main extends Application {
-	private Player player1 = new Player(true);
-	private Player player2 = new Player(true);
+	private Player player1 = new HumanPlayer();
+	private Player player2 = new HumanPlayer();
 	private double pressedX, pressedY;
 	private int gameround = 1;
 	private boolean shipscomplete = false; // zu testzwecken auf true später muss auf false gestellt werden
@@ -61,9 +61,12 @@ public class Main extends Application {
 		musicplay.setCycleCount(500);
 		musicplay.play();
 
-		for (int i = 0; i < shipImageView0.length; i++) {
-			battleshipcontainer.getChildren().add(shipImageView0[i].getImageView());
-			battleshipcontainer.getChildren().add(shipImageView1[i].getImageView());
+		for(ShipImageView shipImageView : shipImageView0){
+			battleshipcontainer.getChildren().add(shipImageView.getImageView());
+		}
+
+		for(ShipImageView shipImageView : shipImageView1){
+			battleshipcontainer.getChildren().add(shipImageView.getImageView());
 		}
 
 		battleshipcontainer.addEventHandler(MouseEvent.ANY, new EventHandler<MouseEvent>() {
@@ -160,8 +163,7 @@ public class Main extends Application {
 		}
 	}
 
-	//javafx.application.Application
-
+	//region javafx.application.Application
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		BackgroundImage background = new BackgroundImage(
@@ -242,6 +244,7 @@ public class Main extends Application {
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
+	//endregion
 
 	/*
 	 * Wir berechnen x und y relativ zum jeweiligen spielfeld und kriegen eine zahl
@@ -289,10 +292,9 @@ public class Main extends Application {
 					imageship.rotateTo(Direction.RIGHT);
 
 				}
-			} else {
-				// System.out.println("schiff deaktiviert");
 			}
 		}
+
 		if (player.area.isFleetComplete()) {
 			gameround++;
 			if (player == player1) {
@@ -305,17 +307,17 @@ public class Main extends Application {
 				showShips1Button.setVisible(true);
 				showShips2Button.setVisible(true);
 				indicate1.setVisible(true);
-
 			}
+
 			if (player1.area.isFleetComplete() && player2.area.isFleetComplete()) {
 				activateMask();
 			}
-
 		}
 	}
 
 	private void attacks(int x, int y) {
 		int a[];
+
 		if (!(player1.area.gameOver() || player2.area.gameOver())) {
 			if (shipscomplete) {
 				System.out.println("Schiffe fertig");
