@@ -98,7 +98,7 @@ public class Field
     
     public boolean isFleetComplete(int shipSize)
     {
-        return this.shipCount(shipSize) == this.getMaxShipCount(shipSize);
+        return this.shipCount(shipSize) >= this.getMaxShipCount(shipSize);
     }
 
     private int getMaxShipCount(int shipSize) {
@@ -122,35 +122,10 @@ public class Field
 
     /*Zuerst überprüfen wir, ob die Anzahl der Schiffe, mit der Länge die wir gerade setzen wollen, nicht eh schon
     erfüllt ist. Wenn schon, return false und brich ab.*/
-        switch (length)
-        {
-            case 2:
-                if (this.shipCount(length) >= 4)
-                {
-                    return false;
-                }
-                break;
-            case 3:
-                if (this.shipCount(length) >= 3)
-                {
-                    return false;
-                }
-                break;
-            case 4:
-                if (this.shipCount(length) >= 2)
-                {
-                    return false;
-                }
-                break;
-            case 5:
-                if (this.shipCount(length) >= 1)
-                {
-                    return false;
-                }
-                break;
-            default:
-                return false;
-        }
+		
+		if(isFleetComplete(length)) {
+			return false;
+		}
 
         /*Switch hat nirgends false zurück geliefert, wir landen hier. wir überprüfen mit der isAreaFree Methode, ob
         wir am gewünschten Ort setzen dürfen. Wie?(steht oben beschrieben). Falls true, adden wir ein Objekt der
