@@ -105,13 +105,13 @@ public class Field
     	 switch (shipSize)
          {
              case 2:
-                 return 4;
+                 return Constants.MAX_SHIP_COUNT_FOR_SHIP_SIZE_2;
              case 3:
-                 return 3;
+                 return Constants.MAX_SHIP_COUNT_FOR_SHIP_SIZE_3;
              case 4:
-            	 return 2;
+            	 return Constants.MAX_SHIP_COUNT_FOR_SHIP_SIZE_4;
              case 5:
-                 return 1;
+                 return Constants.MAX_SHIP_COUNT_FOR_SHIP_SIZE_5;
              default:
                  return -1;
          }
