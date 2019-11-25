@@ -2,32 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13_rc_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_6_0_M1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_6_0_M1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_6_0_M1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_6_0_M1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_6_0_M1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_6_0_M1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sample/AIPlayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sample/HumanPlayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sample/PlayerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/battleship.iml" beforeDir="false" afterPath="$PROJECT_DIR$/battleship.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/ShipImageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/ShipImageView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sample/Player$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sample/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sample/ShipImageView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample/ShipImageView$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sample/ShipImageView$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample/ShipImageView$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sample/ShipImageView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample/ShipImageView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sample/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sample/PlayerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/src/test/java/sample/PlayerTest.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -131,7 +111,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.30804598" />
     <property name="recentsLimit" value="5" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -160,7 +140,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.PlayerTest">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -200,6 +180,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PlayerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="battleship" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sample.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sample" />
+      <option name="MAIN_CLASS_NAME" value="sample.PlayerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -231,6 +230,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.PlayerTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -251,6 +255,8 @@
       <workItem from="1574175571845" duration="19000" />
       <workItem from="1574541419214" duration="5910000" />
       <workItem from="1574616269448" duration="5096000" />
+      <workItem from="1574705169554" duration="917000" />
+      <workItem from="1574706183307" duration="3528000" />
     </task>
     <servers />
   </component>

@@ -1,4 +1,4 @@
-package src.main.java.sample;
+package sample;
 
 public class HumanPlayer extends Player {
 }
