@@ -451,22 +451,7 @@ public class Main extends Application {
 
 		if (ship != null) {
 			System.out.println("zerstört");
-			switch (ship.getLength()) {
-			case 0:
-				break;
-			case 2:
-				image = new Image("file:res/1x2_Ship_Destroyed.png");
-				break;
-			case 3:
-				image = new Image("file:res/1x3_Ship_Destroyed.png");
-				break;
-			case 4:
-				image = new Image("file:res/1x4_Ship_Destroyed.png");
-				break;
-			case 5:
-				image = new Image("file:res/1x5_Ship_Destroyed.png");
-				break;
-			}
+			image = new Image(("file:res/1x" + ship.getLength() + "_Ship_Destroyed.png"));
 
 			int x, y;
 			// *40 um auf unsere Spielfeldkoordinaten zu kommen
