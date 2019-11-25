@@ -53,8 +53,8 @@ public class Main extends Application {
 	private Media winner = new Media(new File("res/winner.wav").toURI().toString());
 	private MediaPlayer winnerplay = new MediaPlayer(winner);
 
-	protected ArrayList<ShipImageView> shipImageView1 = ShipFactory.generatePlayer1Ships();
-	protected ArrayList<ShipImageView>shipImageView0 = ShipFactory.generatePlayer2Ships();
+	protected ArrayList<ShipImageView> shipImageView1 = ShipFactory.getShipImageView(Constants.SHIP_IMAGE_VIEW_X_PLAYER_1);
+	protected ArrayList<ShipImageView>shipImageView0 = ShipFactory.getShipImageView(Constants.SHIP_IMAGE_VIEW_X_PLAYER_2);
 
 	private Pane battleshipcontainer = new Pane();
 

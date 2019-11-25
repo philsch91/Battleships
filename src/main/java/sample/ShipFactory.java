@@ -5,18 +5,7 @@ import java.util.ArrayList;
 import javafx.scene.image.Image;
 
 public class ShipFactory {
-
-    public static ArrayList<ShipImageView>  generatePlayer1Ships(){
-    	
-    	return getShipImageView(Constants.SHIP_IMAGE_VIEW_X_PLAYER_1);
-    
-    }
-
-    public static ArrayList<ShipImageView> generatePlayer2Ships(){
-    	
-    	return getShipImageView(Constants.SHIP_IMAGE_VIEW_X_PLAYER_2);
-    }
-    
+	
     /**
      * returns ArrayList with all ShipImageView for a player
      * @param x
