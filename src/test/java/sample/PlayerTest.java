@@ -1,4 +1,4 @@
-package src.test.java.sample;
+package sample;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -13,6 +13,7 @@ class PlayerTest {
     }
 
     @Test
-    void name() {
+    void playerTest() {
+        System.out.println("playerTest");
     }
 }
