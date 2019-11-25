@@ -1,4 +1,4 @@
-package sample;
+package src.main.java.sample;
 
 public class Constants {
 	public static final int MAX_SHIP_COUNT_FOR_SHIP_SIZE_2 = 4;

@@ -1,4 +1,4 @@
-package sample;
+package src.main.java.sample;
 
 import java.awt.Point;
 

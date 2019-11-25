@@ -1,4 +1,4 @@
-package sample;
+package src.main.java.sample;
 
 import javafx.event.EventHandler;
 import javafx.scene.image.Image;
