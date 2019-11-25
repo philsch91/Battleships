@@ -2,10 +2,8 @@ package sample;
 
 import java.util.ArrayList;
 
-public class Field
-{
+public class Field {
     private ArrayList<Ship> fleet = new ArrayList<>();
-
     public ArrayList<Ship> getFleet()
     {
         return fleet;
