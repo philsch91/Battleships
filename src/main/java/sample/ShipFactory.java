@@ -1,45 +1,39 @@
-package sample;
+package src.main.java.sample;
+
+import java.util.ArrayList;
 
 import javafx.scene.image.Image;
 
 public class ShipFactory {
-
-    private static Image bships[] = {
-            new Image("file:res/1x2_Schiff_Horizontal_1_Fertig.png"),
-            new Image("file:res/1x3_Schiff_Horizontal_1_Fertig.png"),
-            new Image("file:res/1x4_Schiff_Horizontal_1_Fertig.png"),
-            new Image("file:res/1x5_Schiff_Horizontal_1_Fertig.png") };
-
-    public static ShipImageView[] generatePlayer1Ships(){
-        ShipImageView shipImageView[] = {
-                new ShipImageView(1520, 640, 2, bships[0]),
-                new ShipImageView(1520, 640, 2, bships[0]),
-                new ShipImageView(1520, 640, 2, bships[0]),
-                new ShipImageView(1520, 640, 2, bships[0]),
-                new ShipImageView(1520, 720, 3, bships[1]),
-                new ShipImageView(1520, 720, 3, bships[1]),
-                new ShipImageView(1520, 720, 3, bships[1]),
-                new ShipImageView(1520, 800, 4, bships[2]),
-                new ShipImageView(1520, 800, 4, bships[2]),
-                new ShipImageView(1520, 880, 5, bships[3])
-        };
-
-        return shipImageView;
+	
+    /**
+     * returns ArrayList with all ShipImageView for a player
+     * @param x
+     * @return
+     */
+    public static ArrayList<ShipImageView> getShipImageView(int x) {
+    	
+    	ArrayList<ShipImageView> shipImageView = new ArrayList<ShipImageView>();
+    	
+    	for (int i = 0; i < Constants.MAX_SHIP_COUNT_FOR_SHIP_SIZE_2; i++) {
+    		shipImageView.add(new ShipImageView(x,Constants.SHIP_IMAGE_VIEW_Y_SIZE_2,Constants.SHIP_SIZE_2,getShipImage(Constants.SHIP_SIZE_2)));
+		}
+    	
+    	for (int i = 0; i < Constants.MAX_SHIP_COUNT_FOR_SHIP_SIZE_3; i++) {
+    		shipImageView.add(new ShipImageView(x,Constants.SHIP_IMAGE_VIEW_Y_SIZE_3,Constants.SHIP_SIZE_3,getShipImage(Constants.SHIP_SIZE_3)));
+		}
+    	
+    	for (int i = 0; i < Constants.MAX_SHIP_COUNT_FOR_SHIP_SIZE_4; i++) {
+    		shipImageView.add(new ShipImageView(x,Constants.SHIP_IMAGE_VIEW_Y_SIZE_4,Constants.SHIP_SIZE_4,getShipImage(Constants.SHIP_SIZE_4)));
+		}
+    	
+    	for (int i = 0; i < Constants.MAX_SHIP_COUNT_FOR_SHIP_SIZE_5; i++) {
+    		shipImageView.add(new ShipImageView(x,Constants.SHIP_IMAGE_VIEW_Y_SIZE_5,Constants.SHIP_SIZE_5,getShipImage(Constants.SHIP_SIZE_5)));
+		}
+    	return shipImageView;
     }
 
-    public static ShipImageView[] generatePlayer2Ships(){
-        ShipImageView shipImageView[] = {
-                new ShipImageView(1800 - 1520 - 3 * 40, 640, 2, bships[0]),
-                new ShipImageView(1800 - 1520 - 3 * 40, 640, 2, bships[0]),
-                new ShipImageView(1800 - 1520 - 3 * 40, 640, 2, bships[0]),
-                new ShipImageView(1800 - 1520 - 3 * 40, 640, 2, bships[0]),
-                new ShipImageView(1800 - 1520 - 3 * 40, 720, 3, bships[1]),
-                new ShipImageView(1800 - 1520 - 3 * 40, 720, 3, bships[1]),
-                new ShipImageView(1800 - 1520 - 3 * 40, 720, 3, bships[1]),
-                new ShipImageView(1800 - 1520 - 3 * 40, 800, 4, bships[2]),
-                new ShipImageView(1800 - 1520 - 3 * 40, 800, 4, bships[2]),
-                new ShipImageView(1800 - 1520 - 3 * 40, 880, 5, bships[3]) };
-
-        return shipImageView;
-    }
+	private static Image getShipImage(int shipSize) {
+		return new Image("file:res/1x" + shipSize + "_Schiff_Horizontal_1_Fertig.png");
+	}
 }

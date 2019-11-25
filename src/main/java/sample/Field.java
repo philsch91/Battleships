@@ -1,4 +1,4 @@
-package sample;
+package src.main.java.sample;
 
 import java.util.ArrayList;
 
@@ -91,43 +91,39 @@ public class Field {
      shipCount für alle(!!) Schiffslängen die richtige Anzahl gezählt hat (z.B für length 2 ==4(Schiff)), dann true.*/
     public boolean isFleetComplete()
     {
-        return ((this.shipCount(2) == 4 && this.shipCount(3) == 3 && this.shipCount(4) == 2 && this.shipCount(5) == 1));//es gibt 4 2er ,3 3er  ,2 4er und 1 5er
+        return ((this.isFleetComplete(2) && this.isFleetComplete(3) && this.isFleetComplete(4) && this.isFleetComplete(5)));//es gibt 4 2er ,3 3er  ,2 4er und 1 5er
+    }
+    
+    public boolean isFleetComplete(int shipSize)
+    {
+        return this.shipCount(shipSize) >= this.getMaxShipCount(shipSize);
     }
 
-    public boolean setShip(int x, int y, int length, Direction dire, int diffvectorx, int diffvectory)
+    private int getMaxShipCount(int shipSize) {
+    	 switch (shipSize)
+         {
+             case 2:
+                 return Constants.MAX_SHIP_COUNT_FOR_SHIP_SIZE_2;
+             case 3:
+                 return Constants.MAX_SHIP_COUNT_FOR_SHIP_SIZE_3;
+             case 4:
+            	 return Constants.MAX_SHIP_COUNT_FOR_SHIP_SIZE_4;
+             case 5:
+                 return Constants.MAX_SHIP_COUNT_FOR_SHIP_SIZE_5;
+             default:
+                 return -1;
+         }
+	}
+
+	public boolean setShip(int x, int y, int length, Direction dire, int diffvectorx, int diffvectory)
     {
 
     /*Zuerst überprüfen wir, ob die Anzahl der Schiffe, mit der Länge die wir gerade setzen wollen, nicht eh schon
     erfüllt ist. Wenn schon, return false und brich ab.*/
-        switch (length)
-        {
-            case 2:
-                if (this.shipCount(length) >= 4)
-                {
-                    return false;
-                }
-                break;
-            case 3:
-                if (this.shipCount(length) >= 3)
-                {
-                    return false;
-                }
-                break;
-            case 4:
-                if (this.shipCount(length) >= 2)
-                {
-                    return false;
-                }
-                break;
-            case 5:
-                if (this.shipCount(length) >= 1)
-                {
-                    return false;
-                }
-                break;
-            default:
-                return false;
-        }
+		
+		if(isFleetComplete(length)) {
+			return false;
+		}
 
         /*Switch hat nirgends false zurück geliefert, wir landen hier. wir überprüfen mit der isAreaFree Methode, ob
         wir am gewünschten Ort setzen dürfen. Wie?(steht oben beschrieben). Falls true, adden wir ein Objekt der

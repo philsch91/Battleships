@@ -1,4 +1,4 @@
-package sample;
+package src.main.java.sample;
 
 import javafx.application.Application;
 import javafx.event.EventHandler;
@@ -17,6 +17,7 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
 import java.io.File;
+import java.util.ArrayList;
 
 public class Main extends Application {
 	private Player player1 = new HumanPlayer();
@@ -52,8 +53,8 @@ public class Main extends Application {
 	private Media winner = new Media(new File("res/winner.wav").toURI().toString());
 	private MediaPlayer winnerplay = new MediaPlayer(winner);
 
-	protected ShipImageView[] shipImageView1 = ShipFactory.generatePlayer1Ships();
-	protected ShipImageView[] shipImageView0 = ShipFactory.generatePlayer2Ships();
+	protected ArrayList<ShipImageView> shipImageView1 = ShipFactory.getShipImageView(Constants.SHIP_IMAGE_VIEW_X_PLAYER_1);
+	protected ArrayList<ShipImageView>shipImageView0 = ShipFactory.getShipImageView(Constants.SHIP_IMAGE_VIEW_X_PLAYER_2);
 
 	private Pane battleshipcontainer = new Pane();
 
@@ -267,11 +268,11 @@ public class Main extends Application {
 		return null;
 	}
 
-	private void saveShips(ShipImageView shipImageView[], Player player, int p1x, int p1y, int p2x, int p2y) {
+	private void saveShips(ArrayList<ShipImageView> shipImageView02, Player player, int p1x, int p1y, int p2x, int p2y) {
 		// System.out.println("Knopf gedrückt");
 
 		/* Geht alle Schiffe duch und schaut erstmal ob */
-		for (ShipImageView imageship : shipImageView) {
+		for (ShipImageView imageship : shipImageView02) {
 			if (!imageship.isDisable()) {
 				int a[] = calculateXY(imageship.getX(), imageship.getY(), p1x, p1y, p2x, p2y);
 
@@ -450,22 +451,7 @@ public class Main extends Application {
 
 		if (ship != null) {
 			System.out.println("zerstört");
-			switch (ship.getLength()) {
-			case 0:
-				break;
-			case 2:
-				image = new Image("file:res/1x2_Ship_Destroyed.png");
-				break;
-			case 3:
-				image = new Image("file:res/1x3_Ship_Destroyed.png");
-				break;
-			case 4:
-				image = new Image("file:res/1x4_Ship_Destroyed.png");
-				break;
-			case 5:
-				image = new Image("file:res/1x5_Ship_Destroyed.png");
-				break;
-			}
+			image = new Image(("file:res/1x" + ship.getLength() + "_Ship_Destroyed.png"));
 
 			int x, y;
 			// *40 um auf unsere Spielfeldkoordinaten zu kommen
@@ -505,11 +491,11 @@ public class Main extends Application {
 	// Für einzelne Methoden, siehe entsprechende Klassen. Canvas wird zurückgesetzt
 	private void reset() {
 
-		for (int i = 0; i < shipImageView0.length; i++) {
-			shipImageView1[i].rotateTo(Direction.RIGHT);
-			shipImageView0[i].rotateTo(Direction.RIGHT);
-			shipImageView0[i].reset();
-			shipImageView1[i].reset();
+		for (int i = 0; i < shipImageView0.size(); i++) {
+			shipImageView1.get(i).rotateTo(Direction.RIGHT);
+			shipImageView0.get(i).rotateTo(Direction.RIGHT);
+			shipImageView0.get(i).reset();
+			shipImageView1.get(i).reset();
 
 		}
 		player1.area.removeAll();
