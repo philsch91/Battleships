@@ -17,6 +17,7 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
 import java.io.File;
+import java.util.ArrayList;
 
 public class Main extends Application {
 	private Player player1 = new HumanPlayer();
@@ -52,8 +53,8 @@ public class Main extends Application {
 	private Media winner = new Media(new File("res/winner.wav").toURI().toString());
 	private MediaPlayer winnerplay = new MediaPlayer(winner);
 
-	protected ShipImageView[] shipImageView1 = ShipFactory.generatePlayer1Ships();
-	protected ShipImageView[] shipImageView0 = ShipFactory.generatePlayer2Ships();
+	protected ArrayList<ShipImageView> shipImageView1 = ShipFactory.generatePlayer1Ships();
+	protected ArrayList<ShipImageView>shipImageView0 = ShipFactory.generatePlayer2Ships();
 
 	private Pane battleshipcontainer = new Pane();
 
@@ -267,11 +268,11 @@ public class Main extends Application {
 		return null;
 	}
 
-	private void saveShips(ShipImageView shipImageView[], Player player, int p1x, int p1y, int p2x, int p2y) {
+	private void saveShips(ArrayList<ShipImageView> shipImageView02, Player player, int p1x, int p1y, int p2x, int p2y) {
 		// System.out.println("Knopf gedrückt");
 
 		/* Geht alle Schiffe duch und schaut erstmal ob */
-		for (ShipImageView imageship : shipImageView) {
+		for (ShipImageView imageship : shipImageView02) {
 			if (!imageship.isDisable()) {
 				int a[] = calculateXY(imageship.getX(), imageship.getY(), p1x, p1y, p2x, p2y);
 
@@ -505,11 +506,11 @@ public class Main extends Application {
 	// Für einzelne Methoden, siehe entsprechende Klassen. Canvas wird zurückgesetzt
 	private void reset() {
 
-		for (int i = 0; i < shipImageView0.length; i++) {
-			shipImageView1[i].rotateTo(Direction.RIGHT);
-			shipImageView0[i].rotateTo(Direction.RIGHT);
-			shipImageView0[i].reset();
-			shipImageView1[i].reset();
+		for (int i = 0; i < shipImageView0.size(); i++) {
+			shipImageView1.get(i).rotateTo(Direction.RIGHT);
+			shipImageView0.get(i).rotateTo(Direction.RIGHT);
+			shipImageView0.get(i).reset();
+			shipImageView1.get(i).reset();
 
 		}
 		player1.area.removeAll();
