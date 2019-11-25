@@ -1,4 +1,4 @@
-package src.main.java.sample;
+package sample;
 
 public class Constants {
 	public static final int SHIP_SIZE_2 = 2;
