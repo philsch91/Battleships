@@ -19,8 +19,6 @@ public abstract class Player {
         this.attackpositions.add(new Point(x, y));
     }
 
-    /*
-
     /**
      * Wir verhindern doppelten Angriff.
      * Wir schauen, mit der foreach Schleife, ob die Übergebenen x,y von attackPossible
@@ -42,7 +40,7 @@ public abstract class Player {
     /**
      * Reset überschreibt unsere Klassenarraylist
      * die wir oben erstellt haben, mit einer Leeren Arraylist
-     * --> Resetet es
+     *
      */
     public void reset() {
         this.attackpositions = new ArrayList<>();

@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.apache.logging.log4j.*;
+
 class PlayerTest {
 
     @BeforeEach
@@ -14,6 +16,7 @@ class PlayerTest {
 
     @Test
     void playerTest() {
-        System.out.println("playerTest");
+        //System.out.println("playerTest");
+
     }
 }

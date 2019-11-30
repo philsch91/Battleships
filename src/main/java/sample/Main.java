@@ -1,22 +1,26 @@
 package sample;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.*;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
-import javafx.event.ActionEvent;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
+
+import org.apache.logging.log4j.*;
 
 import java.io.File;
+import java.net.URL;
+import java.net.URLClassLoader;
 import java.util.ArrayList;
 
 public class Main extends Application {
@@ -54,13 +58,14 @@ public class Main extends Application {
 	private MediaPlayer winnerplay = new MediaPlayer(winner);
 
 	protected ArrayList<ShipImageView> shipImageView1 = ShipFactory.getShipImageView(Constants.SHIP_IMAGE_VIEW_X_PLAYER_1);
-	protected ArrayList<ShipImageView>shipImageView0 = ShipFactory.getShipImageView(Constants.SHIP_IMAGE_VIEW_X_PLAYER_2);
+	protected ArrayList<ShipImageView> shipImageView0 = ShipFactory.getShipImageView(Constants.SHIP_IMAGE_VIEW_X_PLAYER_2);
 
 	private Pane battleshipcontainer = new Pane();
 
 	private void drawGUI() {
 		musicplay.setCycleCount(500);
 		musicplay.play();
+		startmenu.setVisible(true);
 
 		for(ShipImageView shipImageView : shipImageView0){
 			battleshipcontainer.getChildren().add(shipImageView.getImageView());
@@ -105,7 +110,7 @@ public class Main extends Application {
 			}
 		});
 
-		startmenu.setVisible(true);
+
 		showShips1Button.setLayoutX(1520);
 		showShips1Button.setLayoutY(550);
 		showShips1Button.setPrefSize(120, 10);
@@ -131,7 +136,8 @@ public class Main extends Application {
 
 		battleshipcontainer.getChildren().add(showShips1Button);
 		battleshipcontainer.getChildren().add(showShips2Button);
-		battleshipcontainer.getChildren().addAll(buttonSaveShipsLeft, buttonSaveShipsRight, maskleftfield,
+		battleshipcontainer.getChildren().addAll(
+				buttonSaveShipsLeft, buttonSaveShipsRight, maskleftfield,
 				maskrightfield, startmenu, indicate1, indicate2);
 
 		reset.setVisible(false);
@@ -165,6 +171,7 @@ public class Main extends Application {
 	}
 
 	//region javafx.application.Application
+
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		BackgroundImage background = new BackgroundImage(
@@ -247,9 +254,17 @@ public class Main extends Application {
 	}
 	//endregion
 
-	/*
+	/**
 	 * Wir berechnen x und y relativ zum jeweiligen spielfeld und kriegen eine zahl
-	 * zwischen 0 und 9 raus.
+	 * zwischen 0 und 9 raus
+	 *
+	 * @param imageshipx
+	 * @param imageshipy
+	 * @param p1x
+	 * @param p1y
+	 * @param p2x
+	 * @param p2y
+	 * @return
 	 */
 	private int[] calculateXY(int imageshipx, int imageshipy, int p1x, int p1y, int p2x, int p2y) {
 		int result[] = new int[2];
@@ -408,7 +423,11 @@ public class Main extends Application {
 		}
 	}
 
-	/* Wasserzeichen, gerundet auf die richtige Stelle setzen */
+	/**
+	 * Wasserzeichen, gerundet auf die richtige Stelle setzen
+	 * @param x
+	 * @param y
+	 */
 	private void drawMiss(double x, double y) {
 		int diffx = (int) x % 40;
 		x -= diffx;
@@ -423,9 +442,14 @@ public class Main extends Application {
 
 	}
 
-	/*
+	/**
 	 * Feuerzeichen, gerundet auf die richtige Stelle. Wenn Schiff zerstört,
 	 * richtiges destroyed Schiff setzen
+	 * @param xx
+	 * @param yy
+	 * @param xreal
+	 * @param yreal
+	 * @param player
 	 */
 	private void drawAttack(int xx, int yy, double xreal, double yreal, Player player) {
 		ShipImageView shiplImageView;
@@ -457,16 +481,17 @@ public class Main extends Application {
 			// *40 um auf unsere Spielfeldkoordinaten zu kommen
 			x = (int)ship.getX() * 40;
 			y = (int)ship.getY() * 40;
-			// Wird immer in das gegenüberliegende Feld gesetzt, deshalb stehen hier die
-			// Koordinaten vom Spieler 2
+
+			/**
+			 * Wird immer in das gegenüberliegende Feld gesetzt
+			 * deshalb stehen hier die Koordinaten vom Spieler 2
+			 */
 			if (player == player1) {
 				x += 2 * 440 + 40 + 40;
 				y += 2 * 40;
-
 			} else {
 				x += (440 + 40);
 				y += (2 * 40);
-
 			}
 
 			/*
@@ -480,7 +505,9 @@ public class Main extends Application {
 		}
 	}
 
-	// Alle Schiffe beider Spieler sind gesetzt, dann true
+	/**
+	 * Alle Schiffe beider Spieler sind gesetzt, dann true
+	 */
 	private void shipsComplete() {
 		if (player1.area.isFleetComplete() && player2.area.isFleetComplete()) {
 			this.shipscomplete = true;
@@ -488,34 +515,35 @@ public class Main extends Application {
 
 	}
 
-	// Für einzelne Methoden, siehe entsprechende Klassen. Canvas wird zurückgesetzt
+	/**
+	 * Für einzelne Methoden, siehe entsprechende Klassen. Canvas wird zurückgesetzt
+	 */
 	private void reset() {
-
 		for (int i = 0; i < shipImageView0.size(); i++) {
-			shipImageView1.get(i).rotateTo(Direction.RIGHT);
-			shipImageView0.get(i).rotateTo(Direction.RIGHT);
-			shipImageView0.get(i).reset();
-			shipImageView1.get(i).reset();
-
+			this.shipImageView1.get(i).rotateTo(Direction.RIGHT);
+			this.shipImageView0.get(i).rotateTo(Direction.RIGHT);
+			this.shipImageView0.get(i).reset();
+			this.shipImageView1.get(i).reset();
 		}
-		player1.area.removeAll();
-		player2.area.removeAll();
-		player1.reset();
-		player2.reset();
-		gameround = 1;
-		shipscomplete = false;
-		buttonSaveShipsRight.setVisible(true);
-		buttonSaveShipsLeft.setVisible(true);
-		battleshipcontainer = new Pane();
+		this.player1.area.removeAll();
+		this.player2.area.removeAll();
+		this.player1.reset();
+		this.player2.reset();
+		this.gameround = 1;
+		this.shipscomplete = false;
+		this.buttonSaveShipsRight.setVisible(true);
+		this.buttonSaveShipsLeft.setVisible(true);
+
+		this.battleshipcontainer = new Pane();
 		BackgroundImage background = new BackgroundImage(
 				new Image("file:res/BattleshipsBackground.png", 1800, 1000, true, true), BackgroundRepeat.NO_REPEAT,
 				BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 
-		battleshipcontainer.setBackground(new Background(background));
-		drawGUI();
-		battleshipcontainer.getChildren().add(reset);
-		reset.setVisible(true);
-		startmenu.setVisible(false);
+		this.battleshipcontainer.setBackground(new Background(background));
+		this.drawGUI();
+		this.battleshipcontainer.getChildren().add(reset);
+		this.reset.setVisible(true);
+		this.startmenu.setVisible(false);
 	}
 
 	public static void main(String[] args) {

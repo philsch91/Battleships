@@ -1,0 +1,5 @@
+
+Œsquid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ï…µÄÿÿÿÿÿ
+bsquid:CommentedOutCodeLine&"<This block of commented-out lines of code should be removed.(¦ÚÐ
+psquid:S2293À"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÆáÎk
+Jsquid:UselessParenthesesCheck^"!Remove these useless parentheses.(¹äê“
