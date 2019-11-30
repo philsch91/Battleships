@@ -1,42 +1,0 @@
-
-Esquid:S1604ä"(Make this anonymous inner class a lambda(Å‰Íøÿÿÿÿ
-Esquid:S1604Ü"(Make this anonymous inner class a lambda(Ë‚“‰ıÿÿÿÿ
-csquid:CommentedOutCodeLine£"<This block of commented-out lines of code should be removed.(çÆ·É
-csquid:CommentedOutCodeLineš"<This block of commented-out lines of code should be removed.(ìèü
-Dsquid:S1604d"(Make this anonymous inner class a lambda(ÂÚû…üÿÿÿÿ
-\squid:S2184U"ECast one of the operands of this subtraction operation to a "double".(ëŠÊ
-Dsquid:S1604Y"(Make this anonymous inner class a lambda(û®¯ÿÿÿÿÿ
-bsquid:CommentedOutCodeLineO"<This block of commented-out lines of code should be removed.(Éÿæš
-Esquid:S1604»"(Make this anonymous inner class a lambda(×üõ´ıÿÿÿÿ
-csquid:CommentedOutCodeLine®"<This block of commented-out lines of code should be removed.(¯üü©
-`squid:HiddenFieldCheck¢"8Rename "miss" which hides the field declared at line 49.(åÖâŒüÿÿÿÿ
-Zsquid:S2184°"BCast one of the operands of this addition operation to a "double".(íı ´
-Dsquid:S1604p"(Make this anonymous inner class a lambda(íºÃÿÿÿÿÿ
-_squid:S2184²"BCast one of the operands of this addition operation to a "double".(ÖÜ‰óÿÿÿÿÿ
-csquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(½½şµ
-Dsquid:S1604z"(Make this anonymous inner class a lambda(œ¾Üûşÿÿÿÿ
-Lsquid:S1066ğ"/Merge this if statement with the enclosing one.(Ô°‹ıÿÿÿÿ
-Usquid:S1197ÿ"8Move the array designator from the variable to the type.(¤Œâìıÿÿÿÿ
->squid:S1168Œ"&Return an empty array instead of null.(¥¹ï
-Psquid:S1197•"8Move the array designator from the variable to the type.(Å“Ù©
-hsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÁîÓşÿÿÿÿ
-@squid:S1604Ë"(Make this anonymous inner class a lambda(Ÿ·•í
-Gsquid:S1066É"/Merge this if statement with the enclosing one.(½œÄ
-P
-squid:S106…"9Replace this use of System.out or System.err by a logger.(ë¦Õ²
-<squid:S1659È"Declare "y" on a separate line.(¡Ê²‘şÿÿÿÿ
-Zsquid:S2184±"BCast one of the operands of this addition operation to a "double".(œ¯Ñä
-Qsquid:S1854¼"9Remove this useless assignment to local variable "image".(ŞØ“½
-?squid:S1604I"(Make this anonymous inner class a lambda(¼Ä€
-Bsquid:S1659"&Declare "pressedY" on a separate line.(°Ñçºıÿÿÿÿ
-U
-squid:S106Ä"9Replace this use of System.out or System.err by a logger.(ê·‰ıÿÿÿÿ
-Gsquid:S1066Ã"/Merge this if statement with the enclosing one.(ÛŸí–
-jsquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(ŠæÖµ
-jsquid:S3776¿"RRefactor this method to reduce its Cognitive Complexity from 48 to the 15 allowed.(üªí¬
-O
-squid:S106İ"9Replace this use of System.out or System.err by a logger.(äÙ±I
-Usquid:S1197À"8Move the array designator from the variable to the type.(È–Ş§ıÿÿÿÿ
-=squid:S1659ƒ"%Declare "vectory" on a separate line.(ì¡ŠĞ
-U
-squid:S106Å"9Replace this use of System.out or System.err by a logger.(´ğŠèıÿÿÿÿ
