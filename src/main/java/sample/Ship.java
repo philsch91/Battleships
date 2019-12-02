@@ -38,19 +38,15 @@ public class Ship extends Point {
     public int getDivx() {
         return this.divx;
     }
-
     public int getDivy() {
         return this.divy;
     }
-
     public int getLength() {
         return this.length;
     }
-
     public Direction getDirection() {
         return this.direction;
     }
-
     public ArrayList<ShipPart> getShipParts() {
         return this.shipparts;
     }

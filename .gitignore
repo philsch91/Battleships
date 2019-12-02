@@ -12,4 +12,5 @@ res/
 *.ear
 *.zip
 *.tar.gz
+*.log.gz
 *.rar

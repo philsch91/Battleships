@@ -27,28 +27,21 @@ public class ShipImageView {
     private void setDiffvectorx(int diffvectorx) {
         this.diffvectorx = diffvectorx;
     }
-
     private void setDiffvectory(int diffvectory) {
         this.diffvectory = diffvectory;
     }
-
     private void setX(int x) {
         this.x = x;
     }
-
     private void setY(int y) {
         this.y = y;
     }
-
     public int getDiffvectorx() {
         return diffvectorx;
     }
-
     public int getDiffvectory() {
         return diffvectory;
     }
-
-
     public Direction getDirection() {
         return direction;
     }
@@ -56,11 +49,9 @@ public class ShipImageView {
     public int getX() {
         return x;
     }
-
     public int getY() {
         return y;
     }
-
     public int getLength() {
         return length;
     }
@@ -72,11 +63,9 @@ public class ShipImageView {
     public int getBeginX() {
         return beginX;
     }
-
     public int getBeginY() {
         return beginY;
     }
-
     public Image getImage() {
         return image;
     }
@@ -94,7 +83,6 @@ public class ShipImageView {
         this.length = length;
         this.image = image;
         this.direction = Direction.RIGHT;
-
 
         this.imageView = new ImageView(image);
         imageView.setX(this.x);
@@ -117,8 +105,8 @@ public class ShipImageView {
                         //Koordinaten vom Bild was geklickt wurde (schätze ich, bitte noch bestätigen!)
                         moveX = ((ImageView) (event.getSource())).getTranslateX();
                         moveY = ((ImageView) (event.getSource())).getTranslateY();
-
                     }
+
                     if (event.getEventType() == MouseEvent.MOUSE_DRAGGED && event.getButton().equals(MouseButton.PRIMARY)) {
                         //Differenz der Koordinaten von der Maus, wo wir losgelassen haben und angefangen haben
                         setX = event.getSceneX() - startX;
@@ -180,9 +168,7 @@ public class ShipImageView {
 
     /*Wir übergeben zwar x und y = 0 wenn wir die Methode aufrufen, bedeuetet aber nur, dass es zur
     Ursprungskoordinate zurückspringt (wird von dort alles relativ gerechnet). Ermöglicht durch this.x=xx...*/
-    public void changePosition(int xx, int yy)//Position muss von den ursprugort angegeben werden und nicht von 0/0
-    {
-
+    public void changePosition(int xx, int yy) { //Position muss von den ursprugort angegeben werden und nicht von 0/0
         this.imageView.setTranslateX(xx);
         this.imageView.setTranslateY(yy);
         this.x = xx + this.beginX + diffvectorx;
@@ -199,14 +185,12 @@ public class ShipImageView {
     //rotiert das Bild und das im code angelegte Schiff
     private void rotate() {
 
-                        /*
-                        System.out.println("echt x= " + getX() + "y= " + getY());
-                        int a[] = calculateXY(getX(), getY(), 440 + 40, 40 + 440 + 40 + 40, 440 + 440, 40 + 920);
-                        if (a != null)
-                        {
-                            System.out.println("x= " + (a[0] + 1) + "y= " + (a[1] + 1));
-                        }
-                        */
+        /*
+        System.out.println("echt x= " + getX() + "y= " + getY());
+        int a[] = calculateXY(getX(), getY(), 440 + 40, 40 + 440 + 40 + 40, 440 + 440, 40 + 920);
+        if (a != null){
+            System.out.println("x= " + (a[0] + 1) + "y= " + (a[1] + 1));
+        } */
 
         /*Die rotate Methode rotiert immer um die Mitte eines Objektes. Das ist ein Problem bei Geraden
          Schiffen weil sie nach dem Rotieren zwischen zwei Feldern liegen würden. Hier verhindern wir
@@ -229,13 +213,17 @@ public class ShipImageView {
                 imageView.setY(imageView.getY() + 20);
             }
         }
+
         rotate++;
 
-         /*Switch ist dafür da, um die Bilder die wir drehen und die ImageShips ("Digital angelegte
-          Schiffe" die wir erstellen, nach dem Rotieren abzugleichen. Weil nur weil wir das Bild drehen,
-          heißt es ja nicht, dass sich unsere ImageShips mitdrehen. Sind ja zwei verschiedene
-          Entitäten. Immer Abhängig von welcher Richtung man dreht, ändern wir manuell dann die
-          Direction mit den dementsprechenden Rechungen auch um.*/
+        /**
+         * Switch ist dafür da, um die Bilder die wir drehen und die ImageShips ("Digital angelegte
+         * Schiffe" die wir erstellen, nach dem Rotieren abzugleichen. Weil nur weil wir das Bild drehen,
+         * heißt es ja nicht, dass sich unsere ImageShips mitdrehen. Sind ja zwei verschiedene
+         * Entitäten. Immer Abhängig von welcher Richtung man dreht, ändern wir manuell dann die
+         * Direction mit den dementsprechenden Rechungen auch um
+         */
+
         switch (direction) {
             case UP:
                 direction = Direction.LEFT;
@@ -345,7 +333,6 @@ public class ShipImageView {
         }
     }
 
-
     //Dient nur zum testen als Ausgabe
     private int[] calculateXY(int x, int y, int p1x, int p1y, int p2x, int p2y) {
         int result[] = new int[2];
@@ -359,6 +346,5 @@ public class ShipImageView {
         }
         return null;
     }
-
 
 }

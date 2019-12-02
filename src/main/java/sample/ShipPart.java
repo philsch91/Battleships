@@ -9,7 +9,7 @@ public class ShipPart extends Point {
     public ShipPart(Point coordinates) {
     	this.setLocation(coordinates);
         this.damage = false;
-        System.out.println(" schiffteil an X= " + this.x + " Y =" + this.y + " schaden= " + this.damage);
+        //System.out.println("ShipPart X= " + this.x + " Y =" + this.y + " schaden= " + this.damage);
     }
 
     public boolean isDamaged()
@@ -21,4 +21,12 @@ public class ShipPart extends Point {
         this.damage = true;
     }
 
+    @Override
+    public String toString() {
+        return "ShipPart{" +
+                "X=" + this.x +
+                "Y=" + this.y +
+                "damage=" + this.damage +
+                '}';
+    }
 }

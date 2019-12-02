@@ -195,7 +195,6 @@ public class Main extends Application {
 		reset.setPrefHeight(10);
 
 		reset.setOnAction(new EventHandler<ActionEvent>() {
-
 			@Override
 			public void handle(ActionEvent event) {
 				reset();
@@ -204,6 +203,7 @@ public class Main extends Application {
 				primaryStage.show();
 			}
 		});
+
 		battleshipcontainer.getChildren().add(reset);
 		newGame.setLayoutX(700);
 		newGame.setLayoutY(300);
@@ -345,7 +345,7 @@ public class Main extends Application {
 
 					if (a != null) {
 						if (player1.attackPossible(a[0], a[1])) {
-							if (player2.area.attack(a[0], a[1])) {
+							if (player2.attack(a[0], a[1])) {
 								drawAttack(a[0], a[1], x, y, player2);
 								player1.SaveAttack(a[0], a[1]);
 								activateMask();
@@ -384,7 +384,7 @@ public class Main extends Application {
 					a = calculateXY(x, y, 440 + 40 + 10 * 40 + 2 * 40, 40 + 40, 440 + 440 + 440 + 40, 440 + 40);
 					if (a != null) {
 						if (player2.attackPossible(a[0], a[1])) {
-							if (player1.area.attack(a[0], a[1])) {
+							if (player1.attack(a[0], a[1])) {
 								drawAttack(a[0], a[1], x, y, player1);
 								player2.SaveAttack(a[0], a[1]);
 								activateMask();
@@ -515,7 +515,6 @@ public class Main extends Application {
 		if (player1.area.isFleetComplete() && player2.area.isFleetComplete()) {
 			this.shipscomplete = true;
 		}
-
 	}
 
 	/**
