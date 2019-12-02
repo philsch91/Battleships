@@ -1,0 +1,5 @@
+2019-12-02 14:32:04 DEBUG Log4jConsoleTest:52 - Test: DEBUG level message.
+2019-12-02 14:32:04 INFO  Log4jConsoleTest:55 - Test: INFO level message.
+2019-12-02 14:32:04 WARN  Log4jConsoleTest:58 - Test: WARN level message.
+2019-12-02 14:32:04 ERROR Log4jConsoleTest:61 - Test: ERROR level message.
+2019-12-02 14:32:04 FATAL Log4jConsoleTest:64 - Test: FATAL level message.

@@ -16,7 +16,6 @@ class PlayerTest {
 
     @Test
     void playerTest() {
-        //System.out.println("playerTest");
-
+        System.out.println("playerTest");
     }
 }

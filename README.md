@@ -6,6 +6,11 @@ for Advanced Software Development
 
 This project is a Maven project. It should therefore not be necessary to download dependencies or libraries other than a JDK.
 
+#### Java VM options
+
+- Main: `-Dlog4j.configurationFile=file:./src/main/resources/log4j2.properties`
+- Testing: `-Dlog4j.configurationFile=file:./src/test/resources/log4j2.properties`
+
 #### IntelliJ
 
 1. Open project in IntelliJ
@@ -19,3 +24,8 @@ This project is a Maven project. It should therefore not be necessary to downloa
 - OpenJDK 13
 - OpenJFX 13
 - module-info.java on the java package level in `/src/main/java`
+
+### Notes
+
+`logger.rolling.name` in the log4j2.properties must be equal to the package name of the application.
+`logger.rolling.name = sample`

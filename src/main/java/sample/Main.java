@@ -24,6 +24,9 @@ import java.net.URLClassLoader;
 import java.util.ArrayList;
 
 public class Main extends Application {
+
+	private static final Logger logger = LogManager.getLogger(Main.class);
+
 	private Player player1 = new HumanPlayer();
 	private Player player2 = new HumanPlayer();
 	private double pressedX, pressedY;
@@ -548,5 +551,7 @@ public class Main extends Application {
 
 	public static void main(String[] args) {
 		launch(args);
+
+		logger.info("INFO Battleships.main()");
 	}
 }
