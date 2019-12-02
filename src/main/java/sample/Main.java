@@ -549,8 +549,7 @@ public class Main extends Application {
 	}
 
 	public static void main(String[] args) {
-		launch(args);
-
 		logger.info("INFO Battleships.main()");
+		launch(args);
 	}
 }

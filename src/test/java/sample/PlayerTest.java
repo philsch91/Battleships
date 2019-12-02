@@ -1,6 +1,7 @@
 package sample;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -9,7 +10,7 @@ import org.apache.logging.log4j.*;
 
 class PlayerTest {
 
-    private static final Logger logger = LogManager.getLogger(Log4jConsoleTest.class);
+    private static final Logger logger = LogManager.getLogger(PlayerTest.class);
     private HumanPlayer player;
 
     @BeforeEach
@@ -25,8 +26,9 @@ class PlayerTest {
         assertEquals(player, player);
     }
 
+    @DisplayName("Test #1")
     @Test
-    void playerAttackPossibleTest(){
+    void testAttackPossible_NotPossible(){
         HumanPlayer player = new HumanPlayer();
         player.SaveAttack(1, 1);
 
