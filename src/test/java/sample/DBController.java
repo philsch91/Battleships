@@ -1,5 +1,8 @@
 package sample;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.core.appender.db.DbAppenderLoggingException;
 import org.h2.*;
 
 import java.sql.Connection;
@@ -17,19 +20,18 @@ public class DBController {
     private static final String PASS = "";
 
     private static DBController instance;
+    private Connection conn = null;
 
-    private DBController(){
-        String sql = "CREATE TABLE TESTS " +
-                "(id INTEGER not NULL, " +
-                " name VARCHAR(255), " +
-                " application VARCHAR(255), " +
-                " result INTEGER, " +
-                " PRIMARY KEY (id))";
+    private static final Logger logger = LogManager.getLogger(DBController.class);
 
-        this.executeStatement(sql);
+    public DBController() throws ClassNotFoundException, SQLException{
+        Class.forName(JDBC_DRIVER);
+        DBController.logger.info("Connecting to database...");
+        this.conn = DriverManager.getConnection(DB_URL,USER,PASS);
+        DBController.logger.info("connection successful");
     }
 
-    public static DBController getInstance(){
+    public static DBController getInstance() throws SQLException, ClassNotFoundException {
         if(DBController.instance == null){
             DBController.instance = new DBController();
         }
@@ -38,7 +40,7 @@ public class DBController {
     }
 
     private boolean executeStatement(String statement){
-        Connection conn = null;
+
         Statement stmt = null;
         try {
             // STEP 1: Register JDBC driver
