@@ -6,7 +6,7 @@ res/
 
 # ignore files
 .DS_Store
-*.jar
+*.class
 *.war
 *.nar
 *.ear
