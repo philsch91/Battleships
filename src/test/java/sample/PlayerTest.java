@@ -1,6 +1,5 @@
 package sample;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -14,32 +13,42 @@ class PlayerTest {
     private static DBController dbController;
     private HumanPlayer player;
 
-    @BeforeEach
-    void setUp() {
-        //logger.info("beforeEach");
-    }
-
     @Test
-    void playerTest() {
+    void testPlayer__PlayerInit() {
         logger.info("playerTest");
         HumanPlayer player = new HumanPlayer();
-
         assertEquals(player, player);
     }
 
     @DisplayName("Test #1")
     @Test
-    void testAttackPossible_NotPossible(){
+    void testAttack_NotPossible(){
         HumanPlayer player = new HumanPlayer();
-        player.SaveAttack(1, 1);
-
+        player.saveAttack(1, 1);
         boolean result = player.attackPossible(1,1);
         assertFalse(result);
     }
 
     @Test
-    void playerSetShipTest(){
+    void testAttackPossible__AttackNotPossible(){
         HumanPlayer player = new HumanPlayer();
-        //player.area.setShip(1,1,Direction.RIGHT,)
+        player.saveAttack(1,1);
+        assertFalse(player.attackPossible(1,1));
+    }
+
+    @Test
+    void testAttackPossible__AttackPossible(){
+        HumanPlayer player = new HumanPlayer();
+        player.saveAttack(1,2);
+        assertTrue(player.attackPossible(1,1));
+    }
+
+    @Test
+    void testReset__ResetList(){
+        HumanPlayer player = new HumanPlayer();
+        player.saveAttack(1,1);
+        assertFalse(player.attackPossible(1,1));
+        player.reset();
+        assertTrue(player.attackPossible(1,1));
     }
 }

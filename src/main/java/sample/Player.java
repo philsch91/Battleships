@@ -32,7 +32,7 @@ public abstract class Player {
      * @param x
      * @param y
      */
-    public void SaveAttack(int x, int y) {
+    public void saveAttack(int x, int y) {
         this.attackpositions.add(new Point(x, y));
     }
 
