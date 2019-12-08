@@ -11,6 +11,7 @@ import org.apache.logging.log4j.*;
 class PlayerTest {
 
     private static final Logger logger = LogManager.getLogger(PlayerTest.class);
+    private static DBController dbController;
     private HumanPlayer player;
 
     @BeforeEach
