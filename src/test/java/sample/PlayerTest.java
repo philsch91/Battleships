@@ -7,6 +7,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.apache.logging.log4j.*;
 
+import java.sql.SQLException;
+
 class PlayerTest {
 
     private static final Logger logger = LogManager.getLogger(PlayerTest.class);
@@ -51,4 +53,15 @@ class PlayerTest {
         player.reset();
         assertTrue(player.attackPossible(1,1));
     }
+
+    @Test
+    void testSave() throws SQLException, ClassNotFoundException {
+        HumanPlayer player = new HumanPlayer();
+        player.saveAttack(1,1);
+        player.migrate();
+        assertTrue(player.save());
+
+    }
+
+
 }

@@ -2,8 +2,6 @@ package sample;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.core.appender.db.DbAppenderLoggingException;
-import org.h2.*;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -24,6 +22,8 @@ public class DBController {
 
     private static final Logger logger = LogManager.getLogger(DBController.class);
 
+
+
     public DBController() throws ClassNotFoundException, SQLException{
         Class.forName(JDBC_DRIVER);
         DBController.logger.info("Connecting to database...");
@@ -39,7 +39,7 @@ public class DBController {
         return DBController.instance;
     }
 
-    private boolean executeStatement(String statement){
+    public boolean executeStatement(String statement){
 
         Statement stmt = null;
         try {
@@ -95,4 +95,6 @@ public class DBController {
 
         return true;
     }
+
+
 }
