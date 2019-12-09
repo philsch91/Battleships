@@ -19,8 +19,6 @@ import javafx.stage.Stage;
 import org.apache.logging.log4j.*;
 
 import java.io.File;
-import java.net.URL;
-import java.net.URLClassLoader;
 import java.util.ArrayList;
 
 public class Main extends Application {
@@ -347,14 +345,14 @@ public class Main extends Application {
 						if (player1.attackPossible(a[0], a[1])) {
 							if (player2.attack(a[0], a[1])) {
 								drawAttack(a[0], a[1], x, y, player2);
-								player1.SaveAttack(a[0], a[1]);
+								player1.saveAttack(a[0], a[1]);
 								activateMask();
 								bombplay.stop();
 								bombplay.play();
 
 							} else {
 								drawMiss(x, y);
-								player1.SaveAttack(a[0], a[1]);
+								player1.saveAttack(a[0], a[1]);
 								activateMask();
 								indicate1.setVisible(false);
 								indicate2.setVisible(true);
@@ -386,14 +384,14 @@ public class Main extends Application {
 						if (player2.attackPossible(a[0], a[1])) {
 							if (player1.attack(a[0], a[1])) {
 								drawAttack(a[0], a[1], x, y, player1);
-								player2.SaveAttack(a[0], a[1]);
+								player2.saveAttack(a[0], a[1]);
 								activateMask();
 								bombplay.stop();
 								bombplay.play();
 
 							} else {
 								drawMiss(x, y);
-								player2.SaveAttack(a[0], a[1]);
+								player2.saveAttack(a[0], a[1]);
 								activateMask();
 								indicate1.setVisible(true);
 								indicate2.setVisible(false);

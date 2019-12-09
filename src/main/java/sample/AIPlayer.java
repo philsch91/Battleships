@@ -56,7 +56,7 @@ public class AIPlayer extends Player {
             y = random.nextInt((9 - 0) + 1) + 0;
         } while (this.attackPossible(x, y));
 
-        this.SaveAttack(x, y);
+        this.saveAttack(x, y);
         return enemy.attack(x, y);
     }
 
@@ -72,7 +72,7 @@ public class AIPlayer extends Player {
                 y = random.nextInt((9 - 0) + 1) + 0;
             } while (this.attackPossible(x, y));
 
-            this.SaveAttack(x, y);
+            this.saveAttack(x, y);
             result = enemy.attack(x, y);
 
             if (enemy.area.isDestroyed(x, y) != null) {
@@ -114,7 +114,7 @@ public class AIPlayer extends Player {
             } while (this.attackPossible(x, y));
 
             result = enemy.attack(x, y);
-            this.SaveAttack(x, y);
+            this.saveAttack(x, y);
 
             if (result) {
                 AIsave.add(new AIsave(x, y, direction, true));
@@ -141,7 +141,7 @@ public class AIPlayer extends Player {
             return false;
         }
 
-        this.SaveAttack(x, y);
+        this.saveAttack(x, y);
         result = enemy.attack(x, y);
 
         if(result){

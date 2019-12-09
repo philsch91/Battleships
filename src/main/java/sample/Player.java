@@ -1,12 +1,13 @@
 package sample;
 
 import java.awt.Point;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Random;
 
 //In der Klasse sind alle Eigenschaften, die ein Player hat
 
-public abstract class Player {
+public abstract class Player extends OMRClass{
     public Field area = new Field();
     private ArrayList<Point> attackpositions = new ArrayList<>();
 
@@ -32,7 +33,7 @@ public abstract class Player {
      * @param x
      * @param y
      */
-    public void SaveAttack(int x, int y) {
+    public void saveAttack(int x, int y) {
         this.attackpositions.add(new Point(x, y));
     }
 
@@ -61,5 +62,23 @@ public abstract class Player {
      */
     public void reset() {
         this.attackpositions = new ArrayList<>();
+    }
+
+    public String getClassName(){
+        return "Player";
+    }
+
+    public ArrayList<String> getVariableNames() {
+        ArrayList<String> tmp = new ArrayList<String>();
+        tmp.add("attackPositions");
+        tmp.add("field");
+        return tmp;
+    }
+
+    public ArrayList<String> getValues() {
+        ArrayList<String> tmp = new ArrayList<String>();
+        tmp.add(attackpositions.toString());
+        tmp.add(area.toString());
+        return tmp;
     }
 }
