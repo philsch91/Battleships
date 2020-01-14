@@ -11,13 +11,13 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>11</maven.compiler.release>
         <javafx.version>13</javafx.version>
-        <docker.image.prefix>wolferl42195</docker.image.prefix>
+        <docker.image.prefix>philsch91</docker.image.prefix>
         <maven.deploy.skip>true</maven.deploy.skip>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <!-- GitHub OAuth token & server -->
         <github.global.server>github</github.global.server>
-        <github.global.oauth2Token>786f7b3a3ca9324dfee570589b0a519f8948a313</github.global.oauth2Token>
+        <github.global.oauth2Token>09029107e95b36c855b194e9f695b70014bd724e</github.global.oauth2Token>
     </properties>
 
     <dependencies>
