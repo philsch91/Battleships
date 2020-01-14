@@ -10,5 +10,5 @@ for Advanced Software Development
 #### travis
 [![Build Status](https://travis-ci.com/philsch91/Battleships.svg?branch=travis)](https://travis-ci.com/philsch91/Battleships)
 
-[![Docker Build](https://img.shields.io/docker/cloud/build/philsch91/battleships)](https://cloud.docker.com/u/philsch91/repository/docker/philsch91 PROJECTNAME)
+[![Docker Build](https://img.shields.io/docker/cloud/build/philsch91/battleships)](https://cloud.docker.com/u/philsch91/repository/docker/philsch91/battleships)
 
