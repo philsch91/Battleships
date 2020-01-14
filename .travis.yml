@@ -3,18 +3,18 @@ language: java
 
 #we add the JDK
 jdk:
-- openjdk11
+  - openjdk11
 
 #Linking Travis and Docker
 services:
-- docker
+  - docker
 before_install:
-- echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --pasword-stdin
-- docker pull openjdk:11-jdk
+  - echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --pasword-stdin
+  - docker pull openjdk:11-jdk
 
 #We avoid this error :" the job exceeded the maximum log length and has been terminated "
 script:
-- echo -e '<?xml version="1.0" encoding="UTF-8"?>\n
+  - echo -e '<?xml version="1.0" encoding="UTF-8"?>\n
 <settings xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd" xmlns="http://maven.apache.org/SETTINGS/1.1.0"\n xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">\n
 <mirrors>\n
  <mirror>\n
@@ -45,7 +45,7 @@ script:
 <activeProfile>no-mvnsearch</activeProfile>\n
 </activeProfiles>\n
 </settings>' > $HOME/.m2/settings.xml
-- cat $HOME/.m2/settings.xml
+  - cat $HOME/.m2/settings.xml
  #deploying the app on Docker
-- mvn deploy
-- docker push philsch91/battleships:tagname
+  - mvn deploy
+  - docker push philsch91/battleships:tagname
