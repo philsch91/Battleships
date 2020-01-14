@@ -4,5 +4,7 @@ module battleship {
     requires java.desktop;
     requires org.apache.logging.log4j;
     requires java.sql;
+    requires hibernate.core;
+    requires hibernate.jpa;
     exports sample;
 }

@@ -18,11 +18,9 @@ public class DBController {
     private static final String PASS = "";
 
     private static DBController instance;
-    private Connection conn = null;
-
     private static final Logger logger = LogManager.getLogger(DBController.class);
 
-
+    private Connection conn = null;
 
     public DBController() throws ClassNotFoundException, SQLException{
         Class.forName(JDBC_DRIVER);
