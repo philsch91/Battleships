@@ -13,4 +13,4 @@ script:
  - cat $HOME/.m2/settings.xml
  #deploying the app on Docker
  - mvn deploy
- - docker push philsch91/battleships:tagname
+ #- docker push philsch91/battleships:tagname
