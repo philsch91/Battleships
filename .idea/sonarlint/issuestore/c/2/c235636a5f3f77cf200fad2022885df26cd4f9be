@@ -1,0 +1,18 @@
+
+O"squid:SwitchLastCaseIsDefaultCheck"""Add a default case to this switch.(ØÝÓR
+;squid:S1659"Declare "y" on a separate line.(¡Ê²‘þÿÿÿÿ
+nsquid:S00116"QRename this field "AIsave" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Åú‰‘þÿÿÿÿ
+rsquid:S00100
+"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ë¦š¦ùÿÿÿÿ8ž²¦¡ê-
+;squid:S16594"Declare "y" on a separate line.(¡Ê²‘þÿÿÿÿ
+;squid:S1659B"Declare "y" on a separate line.(¡Ê²‘þÿÿÿÿ
+O"squid:SwitchLastCaseIsDefaultCheck`""Add a default case to this switch.(ØÝÓR
+Csquid:S1905…"&Remove this unnecessary cast to "int".(¡àÝëùÿÿÿÿ
+Csquid:S1905‰"&Remove this unnecessary cast to "int".(ó’¹–ûÿÿÿÿ
+Csquid:S1905ƒ"&Remove this unnecessary cast to "int".(‡õÞÌùÿÿÿÿ
+ksquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ìÿ˜Éûÿÿÿÿ
+nsquid:S3776?"RRefactor this method to reduce its Cognitive Complexity from 29 to the 15 allowed.(ßþÏšûÿÿÿÿ
+4squid:S21195"Save and re-use this "Random".(¼ÝÅf
+>squid:S1905‡"&Remove this unnecessary cast to "int".(§³¼°
+4squid:S2119"Save and re-use this "Random".(¼ÝÅf
+4squid:S2119@"Save and re-use this "Random".(¼ÝÅf

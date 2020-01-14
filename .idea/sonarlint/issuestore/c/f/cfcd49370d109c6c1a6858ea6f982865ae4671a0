@@ -1,0 +1,29 @@
+
+W
+squid:S106Á"9Replace this use of System.out or System.err by a logger.(üÅ×ƒ8¸«ù¸ì-
+isquid:CommentedOutCodeLine½"<This block of commented-out lines of code should be removed.(ÐÃ˜d8¾š€¹ì-
+psquid:S3776M"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(…êí8¸«ù¸ì-
+Dsquid:S1659Ô"%Declare "vectory" on a separate line.(ì¡ŠÐ8¸«ù¸ì-
+9squid:S1659""Declare "newY" on a separate line.(Ïü¨â
+vsquid:S3776º"RRefactor this method to reduce its Cognitive Complexity from 35 to the 15 allowed.(–¸›Þùÿÿÿÿ8¸«ù¸ì-
+9squid:S1659""Declare "setX" on a separate line.(Ïü¨â
+Wsquid:S1197ˆ"8Move the array designator from the variable to the type.(×¶Ã«8¸«ù¸ì-
+Nsquid:S00108í")Either remove or fill this block of code.(…ß­ þÿÿÿÿ8¸«ù¸ì-
+@squid:S1659	"$Declare "length" on a separate line.(‹âØúÿÿÿÿ
+osquid:CommentedOutCodeLine°"<This block of commented-out lines of code should be removed.(‹â…ùþÿÿÿÿ8¸«ù¸ì-
+9squid:S1659""Declare "setY" on a separate line.(Ïü¨â
+\squid:S1197Ò"8Move the array designator from the variable to the type.(¤Œâìýÿÿÿÿ8¸«ù¸ì-
+nsquid:CommentedOutCodeLine\"<This block of commented-out lines of code should be removed.(‹â…ùþÿÿÿÿ8¸«ù¸ì-
+@squid:S1659")Declare "diffvectory" on a separate line.(ï¦¤Â
+:squid:S1659"#Declare "moveX" on a separate line.(Ïü¨â
+Ksquid:S1604_"(Make this anonymous inner class a lambda(›ÃÜÓøÿÿÿÿ8¸«ù¸ì-
+9squid:S1659""Declare "newX" on a separate line.(Ïü¨â
+:squid:S1659"#Declare "moveY" on a separate line.(Ïü¨â
+nsquid:CommentedOutCodeLineR"<This block of commented-out lines of code should be removed.(ËÐŸ°ûÿÿÿÿ8¸«ù¸ì-
+;squid:S1659	"Declare "y" on a separate line.(‹âØúÿÿÿÿ
+isquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÐÃ˜d8¸«ù¸ì-
+;squid:S1659"$Declare "startY" on a separate line.(Ïü¨â
+W
+squid:S106Š"9Replace this use of System.out or System.err by a logger.(üÅ×ƒ8¸«ù¸ì-
+Esquid:S1168Û"&Return an empty array instead of null.(¥¹ï8¸«ù¸ì-
+;squid:S1659"$Declare "beginY" on a separate line.(±îº¿

@@ -1,0 +1,15 @@
+
+Fsquid:S1148C"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8òüÖÕî-
+Ksquid:S1481["(Remove this unused "sql" local variable.(˜ÿ¹½ıÿÿÿÿ8òüÖÕî-
+Gsquid:S2115")Add password protection to this database.(ùÊûë8òüÖÕî-
+Asquid:S1148S"#Use a logger to log this exception.(¸ß¹8òüÖÕî-
+[
+squid:S1064"9Replace this use of System.out or System.err by a logger.(«¸ÛĞøÿÿÿÿ8òüÖÕî-
+[
+squid:S1060"9Replace this use of System.out or System.err by a logger.(Ô²À¯ûÿÿÿÿ8òüÖÕî-
+Asquid:S1148@"#Use a logger to log this exception.(¸ß¹8òüÖÕî-
+V
+squid:S1069"9Replace this use of System.out or System.err by a logger.(¸÷—Ì8òüÖÕî-
+Zsquid:S1854["7Remove this useless assignment to local variable "sql".(˜ÿ¹½ıÿÿÿÿ8òüÖÕî-
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(šÛîªÿÿÿÿÿ
+Gsquid:S21151")Add password protection to this database.(»¥ÏÉ8òüÖÕî-
