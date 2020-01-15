@@ -89,10 +89,13 @@ public class DBController {
         return true;
     }
 
+
+    //region deprecated
     public boolean insertTestResult(String testname, int result){
         String sql = "INSERT INTO TESTS (application, name, result) " +
                 " VALUES ('Battleships','" + testname + "','" + result + "')";
 
         return true;
     }
+    //endregion
 }

@@ -1,0 +1,16 @@
+2020-01-15 13:14:57 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Tabelle "PLAYER" besteht bereits
+Table "PLAYER" already exists; SQL statement:
+CREATE TABLE Player (attackPositions varchar(255), field varchar(255)) [42101-197]
+2020-01-15 13:14:57 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Syntax Fehler in SQL Befehl "INSERT INTO PLAYER (ATTACKPOSITIONS, FIELD) VALUES ([[*]JAVA.AWT.POINT[X=1,Y=1]], SAMPLE.FIELD@BCEF303) "; erwartet "), DEFAULT, NOT, EXISTS, INTERSECTS, SELECT, FROM, WITH"
+Syntax error in SQL statement "INSERT INTO PLAYER (ATTACKPOSITIONS, FIELD) VALUES ([[*]JAVA.AWT.POINT[X=1,Y=1]], SAMPLE.FIELD@BCEF303) "; expected "), DEFAULT, NOT, EXISTS, INTERSECTS, SELECT, FROM, WITH"; SQL statement:
+INSERT INTO Player (attackPositions, field) VALUES ([java.awt.Point[x=1,y=1]], sample.Field@bcef303) [42001-197]
+2020-01-15 13:17:23 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Tabelle "PLAYER" besteht bereits
+Table "PLAYER" already exists; SQL statement:
+CREATE TABLE Player (attackPositions varchar(255), field varchar(255)) [42101-197]
+2020-01-15 13:17:23 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Syntax Fehler in SQL Befehl "INSERT INTO PLAYER (ATTACKPOSITIONS, FIELD) VALUES ([[*]JAVA.AWT.POINT[X=1,Y=1]], SAMPLE.FIELD@BCEF303) "; erwartet "), DEFAULT, NOT, EXISTS, INTERSECTS, SELECT, FROM, WITH"
+Syntax error in SQL statement "INSERT INTO PLAYER (ATTACKPOSITIONS, FIELD) VALUES ([[*]JAVA.AWT.POINT[X=1,Y=1]], SAMPLE.FIELD@BCEF303) "; expected "), DEFAULT, NOT, EXISTS, INTERSECTS, SELECT, FROM, WITH"; SQL statement:
+INSERT INTO Player (attackPositions, field) VALUES ([java.awt.Point[x=1,y=1]], sample.Field@bcef303) [42001-197]
