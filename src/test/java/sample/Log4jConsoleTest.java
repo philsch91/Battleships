@@ -1,6 +1,5 @@
 package sample;
 
-import org.junit.BeforeClass;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -10,14 +9,12 @@ import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Level;
 
-import java.net.URL;
-import java.net.URLClassLoader;
 
 public class Log4jConsoleTest {
 
     private static final Logger logger = LogManager.getLogger(Log4jConsoleTest.class);
 
-    @BeforeClass
+    @BeforeEach
     public static void init() {
         /*
         ClassLoader cl = ClassLoader.getSystemClassLoader();

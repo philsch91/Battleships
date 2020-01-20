@@ -23,7 +23,6 @@ public class PlayerTest {
     public void playerTest() {
         logger.info("playerTest");
         HumanPlayer player = new HumanPlayer();
-
         assertEquals(player, player);
     }
 
