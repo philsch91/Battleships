@@ -1,4 +1,3 @@
-/*
 module battleship {
     requires transitive javafx.controls;
     requires javafx.media;
@@ -6,4 +5,4 @@ module battleship {
     requires org.apache.logging.log4j;
     requires java.sql;
     exports sample;
-} */
+}
