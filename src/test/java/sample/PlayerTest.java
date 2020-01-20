@@ -8,19 +8,19 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.apache.logging.log4j.*;
 
-class PlayerTest {
+public class PlayerTest {
 
     private static final Logger logger = LogManager.getLogger(PlayerTest.class);
     private static DBController dbController;
     private HumanPlayer player;
 
     @BeforeEach
-    void setUp() {
+    public void setUp() {
         //logger.info("beforeEach");
     }
 
     @Test
-    void playerTest() {
+    public void playerTest() {
         logger.info("playerTest");
         HumanPlayer player = new HumanPlayer();
 
@@ -29,7 +29,7 @@ class PlayerTest {
 
     @DisplayName("Test #1")
     @Test
-    void testAttackPossible_NotPossible(){
+    public void testAttackPossible_NotPossible(){
         HumanPlayer player = new HumanPlayer();
         player.SaveAttack(1, 1);
 
@@ -38,7 +38,7 @@ class PlayerTest {
     }
 
     @Test
-    void playerSetShipTest(){
+    public void playerSetShipTest(){
         HumanPlayer player = new HumanPlayer();
         //player.area.setShip(1,1,Direction.RIGHT,)
     }
